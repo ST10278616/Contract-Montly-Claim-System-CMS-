@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Track Claim Status";
+}
+
+<h2>Track Claim Status</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Claim ID</th>
+            <th>Submitted Date</th>
+            <th>Claim Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model.Claims)
+        {
+            <tr>
+                <td>@claim.Id</td>
+                <td>@claim.SubmittedDate.ToShortDateString()</td>
+                <td>@claim.ClaimAmount</td>
+                <td>@claim.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

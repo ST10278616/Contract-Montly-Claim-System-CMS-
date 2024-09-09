@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Upload Document";
+}
+
+<h2>Upload Supporting Document</h2>
+
+<form asp-action="UploadDocument" asp-controller="Claims" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="fileUpload">Select Document</label>
+        <input type="file" id="fileUpload" name="fileUpload" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-3">
+        @ViewBag.Message
+    </div>
+}
